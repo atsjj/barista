@@ -1,8 +1,13 @@
 package barista
 
 import (
-  "github.com/atsjj/pumpkin-spice-latte/sap"
-  "github.com/golang/protobuf/proto"
-  "log"
   pstruct "github.com/golang/protobuf/ptypes/struct"
 )
+
+func String(stringValue string) (*pstruct.Value) {
+  return &pstruct.Value {
+    &pstruct.Value_StringValue {
+      stringValue,
+    },
+  }
+}

@@ -24,17 +24,9 @@ import (
 //   return &any.Any { typeUrl, value }
 // }
 
-func to_s(stringValue string) (*pstruct.Value) {
-  return &pstruct.Value {
-    &pstruct.Value_StringValue {
-      stringValue,
-    },
-  }
-}
-
 func main() {
   a := &sap.Payload { &pstruct.Struct { make(map[string]*pstruct.Value) } }
-  a.Model.Fields["test"] = to_s("This is a test")
+  a.Model.Fields["test"] = barista.String("This is a test")
 
   b := &sap.Payload {}
 
