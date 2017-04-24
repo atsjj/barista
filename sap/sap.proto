@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "google/protobuf/struct.proto";
+
+package sap;
+
+message Payload {
+  google.protobuf.Struct Model = 1;
+}
